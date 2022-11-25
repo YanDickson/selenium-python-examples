@@ -45,33 +45,24 @@ class TestBrowserInteractions:
 
     time.sleep(1)
 
-  def test_alert(self, browser):
-    browser.get('https://webdriveruniversity.com/Popup-Alerts/index.html')
-    button = browser.find_element(By.CSS_SELECTOR, '#button4 > p')
+  def test_iframe(self, browser):
+    browser.get('https://webdriveruniversity.com/IFrame/index.html')
 
-    # Click to trigger the alert
-    button.click()
+    # Find the iframe element
+    iframe_element = browser.find_element(By.ID, 'frame')
 
-    # Wait until the alert is present
-    alert = WebDriverWait(browser, 10).until(EC.alert_is_present())
-
-    # WebDriverWait(browser, 10).until(EC.alert_is_present())
-    # alert = browser.switch_to.alert
-
-    # Get the alert text
-    text = alert.text
-    time.sleep(1)
-
-    # Click the OK button on the Alert
-    alert.accept()
+    # 1. Switch to the iframe
+    browser.switch_to.frame(iframe_element)
+    
+    # 2. Interact with element in frame
+    contact_us_link = browser.find_element(By.LINK_TEXT, 'Contact Us')
+    contact_us_link.click()
     time.sleep(2)
 
-    # Click to trigger the alert
-    button.click()
-    time.sleep(1)
+    # 3. Switch back to default content
+    browser.switch_to.default_content()
 
-    # Click the Cancel button on the alert
-    alert.dismiss()
+    # 4. Interact with element outside of frame
+    navbar_link = browser.find_element(By.ID, 'nav-title')
+    navbar_link.click()
     time.sleep(2)
-
-    assert text == 'Press a button!'

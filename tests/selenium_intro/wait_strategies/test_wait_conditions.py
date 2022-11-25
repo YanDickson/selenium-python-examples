@@ -7,11 +7,12 @@ class TestWaitConditions:
   '''Examples of implementing wait strategies'''
 
   def test_explicit_wait(self, browser):
+    wait = WebDriverWait(browser, 10)
+    
     browser.get('https://webdriveruniversity.com/Ajax-Loader/index.html')
 
     button = browser.find_element(By.CSS_SELECTOR, '#button1 > p')
 
-    wait = WebDriverWait(browser, 10)
     # Waits until the given element is visible on the page
     wait.until(EC.visibility_of(button))
     is_it = button.is_displayed()
@@ -34,12 +35,12 @@ class TestWaitConditions:
     time.sleep(3)
 
   def test_element_to_be_present(self, browser):
-    browser.get('https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html')
-    input_field = browser.find_element(By.ID, 'myInput')
-
-    input_field.send_keys('Z')
-
     wait = WebDriverWait(browser, 10)
+
+    browser.get('https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html')
+    
+    browser.find_element(By.ID, 'myInput').send_keys('Z')
+
     # Waits until the given locator is present in the DOM
     wait.until(EC.presence_of_element_located((By.ID, 'myInputautocomplete-list')))
 
@@ -48,8 +49,10 @@ class TestWaitConditions:
     time.sleep(1)
 
   def test_title_contains(self, browser):
-    browser.get('https://webdriveruniversity.com/To-Do-List/index.html')
     wait = WebDriverWait(browser, 10)
+
+    browser.get('https://webdriveruniversity.com/To-Do-List/index.html')
+
     # Waits until the title of the page contains the given text
     wait.until(EC.title_contains('To Do List'))
 
@@ -57,8 +60,10 @@ class TestWaitConditions:
     time.sleep(1)
 
   def test_title_contains(self, browser):
-    browser.get('https://webdriveruniversity.com/To-Do-List/index.html')
     wait = WebDriverWait(browser, 10)
+
+    browser.get('https://webdriveruniversity.com/To-Do-List/index.html')
+    
     # Waits until the title of the page matches the given string
     wait.until(EC.title_is('WebDriver | To Do List'))
 
@@ -67,12 +72,31 @@ class TestWaitConditions:
 
   def test_url_changes(self, browser):
     url = 'https://webdriveruniversity.com/Page-Object-Model/index.html'
+    wait = WebDriverWait(browser, 10)
+
     browser.get(url)
+    
     browser.find_element(By.LINK_TEXT, 'Contact Us').click()
 
-    wait = WebDriverWait(browser, 10)
     # Waits until the given URL changes
     wait.until(EC.url_changes(url))
 
     assert browser.find_element(By.NAME, 'contactme').text == 'CONTACT US'
+
+  def test_text_to_be_present(self, browser):
+    url = 'https://webdriveruniversity.com/Accordion/index.html'
+    locator = (By.ID, 'hidden-text')
+    expected_text = 'LOADING COMPLETE.'
+    wait = WebDriverWait(browser, 10)
+
+    # Navigate to the URL
+    browser.get(url)
+
+    # Wait for the element to have the text
+    # EC.text_to_be_present_in_element(locator, text)
+    wait.until(EC.text_to_be_present_in_element(locator, expected_text))
+    
+    # Verify the expected text is now on the element
+    text_appear_box = browser.find_element(By.ID, 'hidden-text')
+    assert text_appear_box.text == expected_text
  

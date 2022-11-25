@@ -8,4 +8,4 @@ class TestPytest:
 
   def test_list(self):
     self.the_list.append(56)
-    assert 56 in self.test_list
+    assert 56 in self.the_list
