@@ -4,7 +4,8 @@ import pytest
 def test_find_elements(browser):
   pytest.skip()
 
-  # https://webdriveruniversity.com/Contact-Us/contactus.html
+  # All elements in this example can be found at the URL:
+  #  https://webdriveruniversity.com/Contact-Us/contactus.html
 
   # Finding a list of elements
   
