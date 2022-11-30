@@ -12,5 +12,5 @@ string_list.append('stream')
 item_index = string_list.index('stream')
 
 # Returns the number of instances of "path" in the list
-# The results is 2
+# The result is 2
 item_count = string_list.count('path')

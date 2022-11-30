@@ -4,7 +4,7 @@ def test_assertions():
   small_num = 15
   large_num = 45
 
-  # Assering in or not in
+  # Asserting in or not in
   assert "the" in sample_string
   assert "apple" not in sample_string
 
