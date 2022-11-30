@@ -4,20 +4,24 @@ import pytest
 def test_find_elements(browser):
   pytest.skip()
 
+  # https://webdriveruniversity.com/Contact-Us/contactus.html
+
   # Finding a list of elements
-
-  # https://webdriveruniversity.com/To-Do-List/index.html
-  list_items = browser.find_elements(By.TAG_NAME, 'li')
-
+  
+  list_items = browser.find_elements(By.CLASS_NAME, 'feedback-input')
 
   # Finding a single element
 
-  # https://webdriveruniversity.com/Contact-Us/contactus.html
   first_name_field = browser.find_element(By.NAME, 'first_name')
 
   comments_field = browser.find_element(By.TAG_NAME, 'textarea')
 
   submit_button = browser.find_element(By.CSS_SELECTOR, '[type="submit"]')
 
-  # https://webdriveruniversity.com/Login-Portal/index.html
-  username_field = browser.find_elemet(By.ID, 'text')
+  username_field = browser.find_element(By.ID, 'contact_form')
+
+  nav_text = browser.find_element(By.LINK_TEXT, 'WebdriverUniversity.com (New Approach To Learning)')
+  
+  partail_nav_text = browser.find_element(By.PARTIAL_LINK_TEXT, 'WebdriverUniversity.com')
+
+  reset_button = browser.find_element(By.XPATH, '//*[@id="form_buttons"]/input[1]')
