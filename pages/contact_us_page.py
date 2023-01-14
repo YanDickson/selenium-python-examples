@@ -5,7 +5,7 @@ class ContactUsPage:
   # CLASS VARIABLES
   url = 'https://webdriveruniversity.com/Contact-Us/contactus.html'
 
-  # INSTANCE VARIABLES
+   
   def __init__(self, browser):
     self.browser = browser
 

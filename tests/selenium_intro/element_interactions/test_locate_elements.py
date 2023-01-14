@@ -5,7 +5,7 @@ def test_find_elements(browser):
   pytest.skip()
 
   # All elements in this example can be found at the URL:
-  #  https://webdriveruniversity.com/Contact-Us/contactus.html
+  # https://webdriveruniversity.com/Contact-Us/contactus.html
 
   # Finding a list of elements
   
@@ -19,7 +19,7 @@ def test_find_elements(browser):
 
   submit_button = browser.find_element(By.CSS_SELECTOR, '[type="submit"]')
 
-  username_field = browser.find_element(By.ID, 'contact_form')
+  contact_form = browser.find_element(By.ID, 'contact_form')
 
   nav_text = browser.find_element(By.LINK_TEXT, 'WebdriverUniversity.com (New Approach To Learning)')
   

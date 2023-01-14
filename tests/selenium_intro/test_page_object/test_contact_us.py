@@ -47,7 +47,6 @@ def test_contact_us_object(browser):
   contact_us_page.fill_and_submit_form()
 
   # Then the user should see a thank you message
-  assert thank_you_page.page_heading().is_displayed() == True
   assert thank_you_page.page_heading().text == 'Thank You for your Message!'
 
   # And the current URL should be the Thank You URL

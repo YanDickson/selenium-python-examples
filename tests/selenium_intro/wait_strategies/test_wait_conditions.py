@@ -3,19 +3,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-def test_explicit_wait(browser):
+def test_visibility_of(browser):
+  # Initialises wait class
+  wait = WebDriverWait(browser, 10)
+
   browser.get('https://webdriveruniversity.com/Ajax-Loader/index.html')
 
   button = browser.find_element(By.CSS_SELECTOR, '#button1 > p')
 
-  # Initialises wait class
-  wait = WebDriverWait(browser, 10)
-  
   # Waits until the given element is visible on the page
   wait.until(EC.visibility_of(button))
   
-  is_it = button.is_displayed()
-  assert is_it == True
+  assert button.is_displayed() == True
 
 def test_sleep(browser):
   browser.get('https://webdriveruniversity.com/Login-Portal/index.html')

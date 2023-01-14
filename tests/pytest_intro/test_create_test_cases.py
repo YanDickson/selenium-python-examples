@@ -1,9 +1,7 @@
-import pytest
 greeting = 'Hello, my name is Zoe'
 the_list = [23, 6, 12, 17]
 
-# Test case to verify that the greeting string starts with 'the'
-# This test is skipped
+# Test case to verify that the greeting string starts with 'Hello'
 def test_string():
   is_it = greeting.startswith('Hello')
   assert is_it == True
