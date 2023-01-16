@@ -39,4 +39,3 @@ def test_select_text(browser):
 
   # Select an element by its visible text
   select_3.select_by_visible_text('JQuery')
-  time.sleep(2)
