@@ -37,6 +37,6 @@ def test_select_text(browser):
   # Use select element to initialize Select class
   select_3 = Select(menu_3)
 
-  # Use select element to initialize Select class
+  # Select an element by its visible text
   select_3.select_by_visible_text('JQuery')
   time.sleep(2)
