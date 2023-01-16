@@ -9,9 +9,9 @@ def test_clear(browser):
   input_field = browser.find_element(By.CSS_SELECTOR, '[type="text"]')
 
   input_field.send_keys('Clear this')
-  time.sleep(1)
+  time.sleep(1) # sleep added for visual demonstration
   input_field.clear()
-  time.sleep(2)
+  time.sleep(2) # sleep added for visual demonstration
 
 def test_send_keys(browser):
   browser.get('https://webdriveruniversity.com/To-Do-List/index.html')
@@ -21,7 +21,7 @@ def test_send_keys(browser):
 
   # Send some text and the enter key to the input field
   input_field.send_keys('Write code', Keys.ENTER)
-  time.sleep(3)
+  time.sleep(3) # sleep added for visual demonstration
 
 def test_click(browser):
 
@@ -32,4 +32,4 @@ def test_click(browser):
 
   for item in list_of_items:
     item.click()
-    time.sleep(1)
+    time.sleep(1) # sleep added for visual demonstration

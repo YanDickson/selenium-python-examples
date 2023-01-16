@@ -44,7 +44,7 @@ def test_element_to_be_present(browser):
 
   list_item = browser.find_element(By.CSS_SELECTOR, '#myInputautocomplete-list > div:nth-child(1)')
   list_item.click()
-  time.sleep(1)
+  time.sleep(1) # sleep added for visual demonstration
 
 def test_title_contains(browser):
   wait = WebDriverWait(browser, 10)
@@ -55,7 +55,7 @@ def test_title_contains(browser):
   wait.until(EC.title_contains('To Do List'))
 
   browser.find_element(By.CSS_SELECTOR, '[type="text"]').send_keys('Do python workshop')
-  time.sleep(1)
+  time.sleep(1) # sleep added for visual demonstration
 
 def test_title_contains(browser):
   wait = WebDriverWait(browser, 10)
@@ -66,7 +66,7 @@ def test_title_contains(browser):
   wait.until(EC.title_is('WebDriver | To Do List'))
 
   browser.find_element(By.CSS_SELECTOR, '[type="text"]').send_keys('Do python workshop')
-  time.sleep(1)
+  time.sleep(1) # sleep added for visual demonstration
 
 def test_url_changes(browser):
   url = 'https://webdriveruniversity.com/Page-Object-Model/index.html'

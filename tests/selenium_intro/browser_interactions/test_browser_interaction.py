@@ -36,12 +36,12 @@ def test_title(browser):
 
 def test_refresh(browser):
   browser.get('https://webdriveruniversity.com/Contact-Us/contactus.html')
-  time.sleep(3)
+  time.sleep(3) # sleep added for visual demonstration
 
   # Refreshes the current page
   browser.refresh()
 
-  time.sleep(1)
+  time.sleep(1) # sleep added for visual demonstration
 
 def test_iframe(browser):
   browser.get('https://webdriveruniversity.com/IFrame/index.html')
@@ -55,7 +55,7 @@ def test_iframe(browser):
   # 2. Interact with element in frame
   contact_us_link = browser.find_element(By.LINK_TEXT, 'Contact Us')
   contact_us_link.click()
-  time.sleep(2)
+  time.sleep(2) # sleep added for visual demonstration
 
   # 3. Switch back to default content
   browser.switch_to.default_content()
@@ -63,4 +63,4 @@ def test_iframe(browser):
   # 4. Interact with element outside of frame
   navbar_link = browser.find_element(By.ID, 'nav-title')
   navbar_link.click()
-  time.sleep(2)
+  time.sleep(2) # sleep added for visual demonstration

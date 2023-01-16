@@ -13,7 +13,7 @@ def test_select_value(browser):
 
   # Select an element by its value
   select_1.select_by_value('python')
-  time.sleep(2)
+  time.sleep(2) # sleep added for visual demonstration
   
 def test_select_index(browser):
   browser.get('https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html')
@@ -26,7 +26,7 @@ def test_select_index(browser):
 
   # Select an element by its index
   select_2.select_by_index(1)
-  time.sleep(2)
+  time.sleep(2) # sleep added for visual demonstration
 
 def test_select_text(browser):
   browser.get('https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html')
@@ -39,4 +39,4 @@ def test_select_text(browser):
 
   # Select an element by its visible text
   select_3.select_by_visible_text('JQuery')
-  time.sleep(2)
+  time.sleep(2) # sleep added for visual demonstration
